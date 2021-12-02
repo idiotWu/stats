@@ -19,8 +19,6 @@ svg {
   width: var(--background-width);
   height: var(--background-height);
   fill: white;
-  stroke: rgb(225, 228, 232);
-  stroke-width: 1px;
   rx: 6px;
   ry: 6px;
 }
