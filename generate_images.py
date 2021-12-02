@@ -66,7 +66,6 @@ async def generate_languages(s: Stats) -> None:
     # only show the top 10 languages
     top10_languages = sorted_languages[:10]
     percent_scale = 100 / reduce(lambda acc,cur: acc + cur[1].get("prop"), top10_languages, 0)
-    delay_between = 150
     for i, (lang, data) in enumerate(sorted_languages):
         color = data.get("color")
         color = color if color is not None else "#000000"
@@ -77,7 +76,7 @@ async def generate_languages(s: Stats) -> None:
             f'class="progress-item"></span>'
         )
         lang_list += f"""
-<li style="animation-delay: {i * delay_between}ms;">
+<li>
 <svg xmlns="http://www.w3.org/2000/svg" class="octicon" style="fill:{color};"
 viewBox="0 0 16 16" version="1.1" width="16" height="16"><path
 fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"></path></svg>
