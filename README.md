@@ -4,10 +4,10 @@
   <tbody>
     <tr valign="top">
       <td>
-        <img src="./generated/overview.svg" alt="Daofeng Wu's GitHub Stats" />
+        <img src="https://github.com/idiotWu/stats/blob/generated/overview.svg" alt="Daofeng Wu's GitHub Stats" />
       </td>
       <td>
-        <img src="./generated/languages.svg" alt="Most Used Languages" />
+        <img src="https://github.com/idiotWu/stats/blob/generated/languages.svg" alt="Most Used Languages" />
       </td>
     </tr>
   </tbody>
