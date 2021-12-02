@@ -32,10 +32,9 @@ h2 {
   margin-top: 0;
   margin-bottom: 0.75em;
   line-height: 24px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
-  color: rgb(36, 41, 46);
-  fill: rgb(36, 41, 46);
+  color: rgb(3, 102, 214);
 }
 
 ul {
@@ -101,7 +100,7 @@ div.ellipsis {
 <foreignObject x="21" y="17" width="318" height="176">
 <div xmlns="http://www.w3.org/1999/xhtml" class="ellipsis">
 
-<h2>Languages Used (By File Size)</h2>
+<h2>Most Used Languages</h2>
 
 <div>
 <span class="progress">
