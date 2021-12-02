@@ -40,7 +40,7 @@ th {
   text-align: left;
   font-size: 18px;
   font-weight: 600;
-  color: rgb(3, 102, 214);
+  color: #2f80ed;
 }
 
 td {

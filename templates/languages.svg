@@ -34,7 +34,7 @@ h2 {
   line-height: 24px;
   font-size: 18px;
   font-weight: 600;
-  color: rgb(3, 102, 214);
+  color: #2f80ed;
 }
 
 ul {
@@ -84,9 +84,8 @@ div.ellipsis {
 }
 
 .lang {
-  font-weight: 600;
   margin-right: 4px;
-  color: rgb(36, 41, 46);
+  color: #233;
 }
 
 .percent {
