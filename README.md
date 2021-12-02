@@ -1,11 +1,17 @@
 # [GitHub Stats Visualization](https://github.com/jstrieb/github-stats)
 
-<a href="https://github.com/idiotWu/stats">
-
-![](./generated/overview.svg)
-![](./generated/languages.svg)
-
-</a>
+<table>
+  <tbody>
+    <tr valign="top">
+      <td>
+        <img src="./generated/overview.svg" alt="Daofeng Wu's GitHub Stats" />
+      </td>
+      <td>
+        <img src="./generated/languages.svg" alt="Most Used Languages" />
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 Generate visualizations of GitHub user and repository statistics using GitHub
 Actions.
