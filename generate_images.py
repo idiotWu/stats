@@ -28,46 +28,60 @@ def generate_output_folder() -> None:
 ################################################################################
 
 
-async def generate_overview(s: Stats, dark=False) -> None:
+async def get_overview(s: Stats):
+    return {
+        "name": await s.name,
+        "stars": f"{await s.stargazers:,}",
+        "forks": f"{await s.forks:,}",
+        "contributions": f"{await s.total_contributions:,}",
+        "lines_changed": f"{((await s.lines_changed)[0] + (await s.lines_changed)[1]):,}",
+        "views": f"{await s.views:,}",
+        "repos": f"{len(await s.repos):,}",
+    }
+
+
+async def get_languages(s: Stats):
+    top10 = sorted(
+        (await s.languages).items(), reverse=True, key=lambda t: t[1].get("size")
+    )[:10]
+
+    scale = 100 / reduce(lambda acc,cur: acc + cur[1].get("prop"), top10, 0)
+    return top10, scale
+
+
+def generate_overview(overview, dark=False) -> None:
     """
     Generate an SVG badge with summary statistics
     :param s: Represents user's GitHub statistics
     """
-    postfix = "-dark" if dark else ""
-    with open(f"templates/overview{postfix}.svg", "r") as f:
+    filename = "overview{}.svg".format("-dark" if dark else "")
+    with open(f"templates/{filename}", "r") as f:
         output = f.read()
 
-    output = re.sub("{{ name }}", await s.name, output)
-    output = re.sub("{{ stars }}", f"{await s.stargazers:,}", output)
-    output = re.sub("{{ forks }}", f"{await s.forks:,}", output)
-    output = re.sub("{{ contributions }}", f"{await s.total_contributions:,}", output)
-    changed = (await s.lines_changed)[0] + (await s.lines_changed)[1]
-    output = re.sub("{{ lines_changed }}", f"{changed:,}", output)
-    output = re.sub("{{ views }}", f"{await s.views:,}", output)
-    output = re.sub("{{ repos }}", f"{len(await s.repos):,}", output)
+    output = re.sub("{{ name }}", overview["name"], output)
+    output = re.sub("{{ stars }}", overview["stars"], output)
+    output = re.sub("{{ forks }}", overview["forks"], output)
+    output = re.sub("{{ contributions }}", overview["contributions"], output)
+    output = re.sub("{{ lines_changed }}", overview["lines_changed"], output)
+    output = re.sub("{{ views }}", overview["views"], output)
+    output = re.sub("{{ repos }}", overview["repos"], output)
 
     generate_output_folder()
-    with open("generated/overview.svg", "w") as f:
+    with open(f"generated/{filename}", "w") as f:
         f.write(output)
 
 
-async def generate_languages(s: Stats, dark=False) -> None:
+def generate_languages(top10_languages, percent_scale, dark=False) -> None:
     """
     Generate an SVG badge with summary languages used
     :param s: Represents user's GitHub statistics
     """
-    postfix = "-dark" if dark else ""
-    with open(f"templates/languages{postfix}.svg", "r") as f:
+    filename = "languages{}.svg".format("-dark" if dark else "")
+    with open(f"templates/{filename}", "r") as f:
         output = f.read()
 
     progress = ""
     lang_list = ""
-    sorted_languages = sorted(
-        (await s.languages).items(), reverse=True, key=lambda t: t[1].get("size")
-    )
-    # only show the top 10 languages
-    top10_languages = sorted_languages[:10]
-    percent_scale = 100 / reduce(lambda acc,cur: acc + cur[1].get("prop"), top10_languages, 0)
     for _, (lang, data) in enumerate(top10_languages):
         color = data.get("color")
         color = color if color is not None else "#000000"
@@ -93,7 +107,7 @@ async def generate_languages(s: Stats, dark=False) -> None:
     output = re.sub(r"{{ lang_list }}", lang_list, output)
 
     generate_output_folder()
-    with open("generated/languages.svg", "w") as f:
+    with open(f"generated/{filename}", "w") as f:
         f.write(output)
 
 
@@ -136,12 +150,12 @@ async def main() -> None:
             exclude_langs=excluded_langs,
             ignore_forked_repos=ignore_forked_repos,
         )
-        await asyncio.gather(
-            generate_languages(s),
-            generate_languages(s, dark=True),
-            generate_overview(s),
-            generate_overview(s, dark=True),
-        )
+        overview = await get_overview(s)
+        top10_languages, percent_scale = await get_languages(s)
+        generate_overview(overview),
+        generate_overview(overview, dark=True),
+        generate_languages(top10_languages, percent_scale),
+        generate_languages(top10_languages, percent_scale, dark=True),
 
 
 if __name__ == "__main__":
