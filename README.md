@@ -1,17 +1,12 @@
-# [GitHub Stats Visualization](https://github.com/jstrieb/github-stats)
+|![Daofeng Wu's GitHub Stats](https://github.com/idiotWu/stats/blob/generated/overview.svg#gh-light-mode-only) ![Daofeng Wu's GitHub Stats](https://github.com/idiotWu/stats/blob/generated/overview-dark.svg#gh-dark-mode-only)|![Most Used Languages](https://github.com/idiotWu/stats/blob/generated/languages.svg#gh-light-mode-only) ![Most Used Languages](https://github.com/idiotWu/stats/blob/generated/languages-dark.svg#gh-dark-mode-only)|
+|:--:|:--:|
 
-<table>
-  <tbody>
-    <tr valign="top">
-      <td>
-        <img src="https://github.com/idiotWu/stats/blob/generated/overview.svg" alt="Daofeng Wu's GitHub Stats" />
-      </td>
-      <td>
-        <img src="https://github.com/idiotWu/stats/blob/generated/languages.svg" alt="Most Used Languages" />
-      </td>
-    </tr>
-  </tbody>
-</table>
+This is a fork of [GitHub Stats Visualization](https://github.com/jstrieb/github-stats) with customizations.
+
+<details>
+<summary>Original README.md </summary>
+
+# [GitHub Stats Visualization](https://github.com/jstrieb/github-stats)
 
 Generate visualizations of GitHub user and repository statistics using GitHub
 Actions.
@@ -145,3 +140,5 @@ releasing work publicly on the Web.
   [anuraghazra/github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
 - Makes use of [GitHub Octicons](https://primer.style/octicons/) to precisely
   match the GitHub UI
+</details>
+
