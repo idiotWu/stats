@@ -26,7 +26,7 @@ h2 {
   line-height: 24px;
   font-size: 18px;
   font-weight: 600;
-  color: #0969da;
+  color: #539bf5;
 }
 
 ul {
@@ -56,7 +56,7 @@ div.ellipsis {
 }
 
 .octicon {
-  fill: rgb(88, 96, 105);
+  fill: #768390;
   margin-right: 0.5ch;
   vertical-align: top;
 }
@@ -77,11 +77,11 @@ div.ellipsis {
 
 .lang {
   margin-right: 4px;
-  color: #233;
+  color: #adbac7;
 }
 
 .percent {
-  color: rgb(88, 96, 105)
+  color: #768390;
 }
 </style>
 <g>
