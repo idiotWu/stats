@@ -8,8 +8,8 @@ mv -v generated /tmp/generated
 git checkout generated
 
 # set up git
-git config user.name "actions@github.com"
-git config user.email "GitHub Actions"
+git config user.name "GitHub Actions"
+git config user.email "actions@github.com"
 
 # clean up
 # git rm -rf --ignore-unmatch *
