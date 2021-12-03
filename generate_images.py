@@ -28,12 +28,13 @@ def generate_output_folder() -> None:
 ################################################################################
 
 
-async def generate_overview(s: Stats) -> None:
+async def generate_overview(s: Stats, dark=False) -> None:
     """
     Generate an SVG badge with summary statistics
     :param s: Represents user's GitHub statistics
     """
-    with open("templates/overview.svg", "r") as f:
+    postfix = "-dark" if dark else ""
+    with open(f"templates/overview{postfix}.svg", "r") as f:
         output = f.read()
 
     output = re.sub("{{ name }}", await s.name, output)
@@ -50,12 +51,13 @@ async def generate_overview(s: Stats) -> None:
         f.write(output)
 
 
-async def generate_languages(s: Stats) -> None:
+async def generate_languages(s: Stats, dark=False) -> None:
     """
     Generate an SVG badge with summary languages used
     :param s: Represents user's GitHub statistics
     """
-    with open("templates/languages.svg", "r") as f:
+    postfix = "-dark" if dark else ""
+    with open(f"templates/languages{postfix}.svg", "r") as f:
         output = f.read()
 
     progress = ""
@@ -66,7 +68,7 @@ async def generate_languages(s: Stats) -> None:
     # only show the top 10 languages
     top10_languages = sorted_languages[:10]
     percent_scale = 100 / reduce(lambda acc,cur: acc + cur[1].get("prop"), top10_languages, 0)
-    for i, (lang, data) in enumerate(top10_languages):
+    for _, (lang, data) in enumerate(top10_languages):
         color = data.get("color")
         color = color if color is not None else "#000000"
         percentage = data.get("prop", 0) * percent_scale
@@ -134,7 +136,12 @@ async def main() -> None:
             exclude_langs=excluded_langs,
             ignore_forked_repos=ignore_forked_repos,
         )
-        await asyncio.gather(generate_languages(s), generate_overview(s))
+        await asyncio.gather(
+            generate_languages(s),
+            generate_languages(s, dark=True),
+            generate_overview(s),
+            generate_overview(s, dark=True),
+        )
 
 
 if __name__ == "__main__":
