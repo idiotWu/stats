@@ -7,7 +7,7 @@ on:
   push:
     branches: [ master ]
   schedule:
-    - cron: "5 0 * * *"
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in
@@ -59,16 +59,10 @@ jobs:
         EXCLUDED_LANGS: ${{ secrets.EXCLUDED_LANGS }}
         EXCLUDE_FORKED_REPOS: true
 
+    - name: Set env for scheduled actions
+      if: github.event.schedule
+      run : echo "::set-env name=SCHEDULED_ACTION::true"
+
     # Commits all changed files to the repository
     - name: Commit to the repo
-      run: |
-        mv -v generated /tmp/generated
-        git checkout generated
-        git config user.name "$GITHUB_ACTOR"
-        git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
-        # git rm -rf --ignore-unmatch *
-        rm -rf *
-        mv -v /tmp/generated/* .
-        git add --all
-        git commit -m "Update generated files: $GITHUB_SHA" || echo
-        git push origin generated
+      run: ./commit.sh
