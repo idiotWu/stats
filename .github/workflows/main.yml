@@ -61,7 +61,7 @@ jobs:
 
     - name: Set env for scheduled actions
       if: github.event.schedule
-      run : echo "::set-env name=SCHEDULED_ACTION::true"
+      run : echo "SCHEDULED_ACTION=true" >> $GITHUB_ENV
 
     # Commits all changed files to the repository
     - name: Commit to the repo
