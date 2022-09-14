@@ -1,7 +1,12 @@
 |![Daofeng Wu's GitHub Stats](https://github.com/idiotWu/stats/blob/generated/overview.svg#gh-light-mode-only) ![Daofeng Wu's GitHub Stats](https://github.com/idiotWu/stats/blob/generated/overview-dark.svg#gh-dark-mode-only)|![Most Used Languages](https://github.com/idiotWu/stats/blob/generated/languages.svg#gh-light-mode-only) ![Most Used Languages](https://github.com/idiotWu/stats/blob/generated/languages-dark.svg#gh-dark-mode-only)|
 |:--:|:--:|
 
-This is a fork of [GitHub Stats Visualization](https://github.com/jstrieb/github-stats) with customizations.
+This is a fork of [GitHub Stats Visualization](https://github.com/jstrieb/github-stats) with the following modifications:
+
+1. Support both the dark and the light theme
+2. Align a maximun of 10 languages in two columns
+3. Commit generated images in a [separate branch](https://github.com/idiotWu/stats/tree/generated)
+4. and more tweaks...
 
 <details>
 <summary>Original README.md </summary>
