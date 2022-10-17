@@ -4,7 +4,7 @@
 This is a fork of [GitHub Stats Visualization](https://github.com/jstrieb/github-stats) with the following modifications:
 
 1. Support both the dark and the light theme
-2. Align a maximun of 10 languages in two columns
+2. Align a maximum of 10 languages in two columns
 3. Commit the generated images to a [separate branch](https://github.com/idiotWu/stats/tree/generated)
 4. and more tweaks...
 
