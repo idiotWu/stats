@@ -92,7 +92,7 @@ div.ellipsis {
 
 <div>
 <span class="progress">
-<span style="background-color: #3178c6;width: 50.984%;" class="progress-item"></span><span style="background-color: #f1e05a;width: 23.626%;" class="progress-item"></span><span style="background-color: #555555;width: 6.970%;" class="progress-item"></span><span style="background-color: #563d7c;width: 5.897%;" class="progress-item"></span><span style="background-color: #b07219;width: 4.721%;" class="progress-item"></span><span style="background-color: #3572A5;width: 4.205%;" class="progress-item"></span><span style="background-color: #ff3e00;width: 2.126%;" class="progress-item"></span><span style="background-color: #f34b7d;width: 0.829%;" class="progress-item"></span><span style="background-color: #c6538c;width: 0.395%;" class="progress-item"></span><span style="background-color: #89e051;width: 0.248%;" class="progress-item"></span>
+<span style="background-color: #3178c6;width: 51.002%;" class="progress-item"></span><span style="background-color: #f1e05a;width: 23.556%;" class="progress-item"></span><span style="background-color: #555555;width: 6.949%;" class="progress-item"></span><span style="background-color: #563d7c;width: 5.874%;" class="progress-item"></span><span style="background-color: #b07219;width: 4.707%;" class="progress-item"></span><span style="background-color: #3572A5;width: 4.192%;" class="progress-item"></span><span style="background-color: #ff3e00;width: 2.120%;" class="progress-item"></span><span style="background-color: #f34b7d;width: 0.827%;" class="progress-item"></span><span style="background-color: #c6538c;width: 0.526%;" class="progress-item"></span><span style="background-color: #89e051;width: 0.247%;" class="progress-item"></span>
 </span>
 </div>
 
@@ -105,7 +105,7 @@ div.ellipsis {
         <circle xmlns="http://www.w3.org/2000/svg" cx="8" cy="9" r="5" />
     </svg>
     <span class="lang">TypeScript</span>
-    <span class="percent">50.98%</span>
+    <span class="percent">51.00%</span>
 </li>
 
 
@@ -115,7 +115,7 @@ div.ellipsis {
         <circle xmlns="http://www.w3.org/2000/svg" cx="8" cy="9" r="5" />
     </svg>
     <span class="lang">JavaScript</span>
-    <span class="percent">23.63%</span>
+    <span class="percent">23.56%</span>
 </li>
 
 
@@ -125,7 +125,7 @@ div.ellipsis {
         <circle xmlns="http://www.w3.org/2000/svg" cx="8" cy="9" r="5" />
     </svg>
     <span class="lang">C</span>
-    <span class="percent">6.97%</span>
+    <span class="percent">6.95%</span>
 </li>
 
 
@@ -135,7 +135,7 @@ div.ellipsis {
         <circle xmlns="http://www.w3.org/2000/svg" cx="8" cy="9" r="5" />
     </svg>
     <span class="lang">CSS</span>
-    <span class="percent">5.90%</span>
+    <span class="percent">5.87%</span>
 </li>
 
 
@@ -145,7 +145,7 @@ div.ellipsis {
         <circle xmlns="http://www.w3.org/2000/svg" cx="8" cy="9" r="5" />
     </svg>
     <span class="lang">Java</span>
-    <span class="percent">4.72%</span>
+    <span class="percent">4.71%</span>
 </li>
 
 
@@ -155,7 +155,7 @@ div.ellipsis {
         <circle xmlns="http://www.w3.org/2000/svg" cx="8" cy="9" r="5" />
     </svg>
     <span class="lang">Python</span>
-    <span class="percent">4.20%</span>
+    <span class="percent">4.19%</span>
 </li>
 
 
@@ -165,7 +165,7 @@ div.ellipsis {
         <circle xmlns="http://www.w3.org/2000/svg" cx="8" cy="9" r="5" />
     </svg>
     <span class="lang">Svelte</span>
-    <span class="percent">2.13%</span>
+    <span class="percent">2.12%</span>
 </li>
 
 
@@ -185,7 +185,7 @@ div.ellipsis {
         <circle xmlns="http://www.w3.org/2000/svg" cx="8" cy="9" r="5" />
     </svg>
     <span class="lang">SCSS</span>
-    <span class="percent">0.39%</span>
+    <span class="percent">0.53%</span>
 </li>
 
 
